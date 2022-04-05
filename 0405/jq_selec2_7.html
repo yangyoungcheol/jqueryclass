@@ -13,17 +13,17 @@
 		];
 
 		$(obj).each(function(i, o){
-				console.log(i + ":", o);
+				console.log(i + ":", o);					// 변수로 선언한 obj 선택자
 		});
 		console.log("==== The End 1 ====");
 
 		$.each($("#menu2 li"), function(i, o){
-				console.log(i + ":", o);
+				console.log(i + ":", o);					// menu2 ID 내 li 태그 엘러먼트 선택자
 		});
 		console.log("==== The End 2 ====");    
 
 		$.each($("#menu2 li"), function(i){
-				console.log(i + ":", $(this));
+				console.log(i + ":", $(this));				// menu1 ID 내 li 태그 엘러먼트 모든 속성
 		});    
 	});
 </script>
