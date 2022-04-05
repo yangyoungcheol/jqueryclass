@@ -1,31 +1,44 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title> 탐색 선택자 </title>
-<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-<script type="text/javascript">
-//<![CDATA[
-$(function(){
-  $("a[title]").css("background-color","yellow");                          //  a 태그 내 title 속성 선택자
-  $("a[href='http://www.nate.com']").css("background-color","pink");       //  a 태그 내 링크주소 속성 선택자
-  $("a[href^='mailto']").css("background-color","aqua");       //  a 태그 내 링크주소 mailto 로 시작 속성 선택자
-  $("a[href$='net']").css("background-color","purple");       //  a 태그 내 링크주소 net 로 끝나는 속성 선택자
-  $("a[href*='google']").css("background-color","orange");       //  a 태그 내 링크주소 google 이 포함되어 있는 속성 선택자
-});
-//]]>
+<meta charset="UTF-8">
+<title> 선택자 </title>  
+<script src="js/jquery.js"></script>
+<script>
+	$(function(){
+		var obj = [
+			{"area":"서울"},
+			{"area":"부산"},
+			{"area":"전주"}
+		];
+
+		$(obj).each(function(i, o){
+				console.log(i + ":", o);
+		});
+		console.log("==== The End 1 ====");
+
+		$.each($("#menu2 li"), function(i, o){
+				console.log(i + ":", o);
+		});
+		console.log("==== The End 2 ====");    
+
+		$.each($("#menu2 li"), function(i){
+				console.log(i + ":", $(this));
+		});    
+	});
 </script>
 </head>
 <body>
-   <h1>탐색 선택자</h1>
-   <ul>
-      <li>
-         <a href="http://www.naver.com" title="네이버 이동">네이버</a>
-      </li>
-      <li><a href="mailto:ciycc@naver.com">관리자에게</a></li>
-      <li><a href="http://www.nate.com">네이트</a></li>
-      <li><a href="http://www.daum.net">다음</a></li>
-      <li><a href="http://www.google.com">구글</a></li>
-   </ul>
+	<h1>탐색 선택자</h1>
+	<ul id="menu1">
+		<li>내용1-1</li>
+		<li>내용1-2</li>
+		<li>내용1-3</li>
+	</ul>
+	<ul id="menu2">
+		<li>내용2-1</li>
+		<li>내용2-2</li>
+		<li>내용2-3</li>
+	</ul>
 </body>
 </html>

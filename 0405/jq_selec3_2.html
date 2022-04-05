@@ -1,20 +1,29 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title> 객체 조작 및 생성 </title>
-<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-<script type="text/javascript">
-//<![CDATA[
-$(function(){
-  $("h2").text("텍스트 메서드");
-  alert($("h1").text());
-});
-//]]>
+<meta charset="UTF-8">
+<title> 객체 조작 및 생성 </title>  
+<script src="js/jquery.js"></script>
+<script>
+	$(function( ){
+		var srcVal = $("#sec_1 img").attr("src");
+		console.log(srcVal);
+
+		$("#sec_1 img")
+		.attr({
+			"width":200,
+			"src": srcVal.replace("1.jpg","2.jpg"),
+			"alt": "바위"
+		})
+		.removeAttr("border");
+	});
 </script>
 </head>
 <body>
-  <h1>객체 조작 및 생성</h1>
-  <h2>text()</h2>
+	<h1><strong>객체 조작 및 생성</strong></h1>
+	<section id="sec_1">
+		<h2>이미지 속성</h2>
+		<p><img src="images/math_img_1.jpg" alt="바위" border="2"></p>
+	</section>
 </body>
 </html>
