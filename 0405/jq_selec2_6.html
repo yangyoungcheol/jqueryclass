@@ -6,19 +6,23 @@
 <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript">
 //<![CDATA[
-   $(function(){
-      $("#menu li:first").css("background-color","yellow");    // menu li:first ID 선택자 백그라운드 컬러 yellow
-      $("#menu li:last").css("background-color","pink");    // menu li:last ID 선택자 백그라운드 컬러 pink
-   });
+$(function(){
+  $("li:eq(3)").css("background-color","yellow");           // li:eq(3) 선택자
+  $("li:lt(3)").css("background-color","pink");            // li:lt(3) 선택자
+  $("li:gt(3)").css("background-color","aqua");            // li:gt(3) 선택자
+});
 //]]>
 </script>
 </head>
 <body>
    <h1>탐색 선택자</h1>
-   <ul id="menu">
+   <ul>
       <li>내용1</li>
       <li>내용2</li>
       <li>내용3</li>
+      <li>내용4</li>
+      <li>내용5</li>
+      <li>내용6</li>
    </ul>
 </body>
 </html>
