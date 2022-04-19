@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+
+    let imgArr = [
+        "http://res.heraldm.com/content/image/2018/02/21/20180221000722_0.jpg",
+        "https://blog.kakaocdn.net/dn/bk2B94/btq3dPaR9iz/Yp9ja8CkkgDFmOS6kPxq9K/img.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSLzzVfRaz4jA6w52F2420RlWlB8IVzDPFe-4IRRYEWNofKAUbOdQhyQ4X0HtS7Avaa-M&usqp=CAU",
+        "https://mblogthumb-phinf.pstatic.net/20130201_228/mnb591_1359701720495FGLfy_JPEG/1.jpg?type=w2",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGUdhKraysqw8GkuQdPtnVe0YWATwOcXu_HPwtr9sWXMamME66WF-RNxWcljhK5CffXiE&usqp=CAU"
+    ];
+    
+    let cid = 0;
+
+  //$("#flip").click(function(){
+
+    //cid = (cid > 3) ? 0 : cid;
+
+    setInterval(()=>{ 
+        cid = (cid > 3) ? 0 : cid;
+        $("#images").attr("src", imgArr[cid]).fadeIn(1000).fadeOut(1000)
+        cid++;
+    }, 2000)
+
+  //});
+});
+</script>
+<style> 
+#panel, #flip {
+  padding: 5px;
+  text-align: center;
+  background-color: #e5eecc;
+  border: solid 1px #c3c3c3;
+}
+
+#panel {
+  padding: 50px;
+}
+</style>
+</head>
+<body>
+ 
+<button id="flip">Click to slide down panel</button>
+<div id="panel">
+    <img src="http://res.heraldm.com/content/image/2018/02/21/20180221000722_0.jpg" id="images" />
+</div>
+
+</body>
+</html>
